@@ -1,11 +1,44 @@
 ---
 layout: post
-title: "xv6 Operating System Modifications"
+title: "xv6 OS Modifications"
 subtitle: "Expansions on the xv6 minimal operating system."
 date: 2022-10-25 10:45:13 -0400
 background: '/img/posts/06.jpg'
 ---
 
 <p>
-    
+   <a href="https://github.com/halnak/xv6-mods">GitHub for this project</a> 
+</p>
+
+<p>
+    <a href="https://github.com/mit-pdos/xv6-public">Public xv6 repository</a>
+</p>
+
+<p>
+    This project stemmed from a class I am taking this semester, Operating Systems Engineering (6.039/6.1810). While we have done a variety of 
+    projects modifying and developing the xv6 minimal linux-based operating system - such as implementing essential system calls, trap 
+    handlers, copy-on-write forking, and more - multithreading has been my favorite lab. I have imported my multithreading files to the 
+    public xv6 repository, which show the user-side code needed to perform multithreading.
+</p>
+
+<p>
+    The example provided (run on Ubuntu) displays the difference in speed when multiple threads are used instead of a single thread. Running
+    <code>./ph 1</code> runs the insertion of new keys into a simple hash table. The code puts in each key and then gets each key, displaying
+    both the time it took for each of these processes and the accuracy of the operations (such that if no keys are missing, we have succeeded).
+</p>
+
+<p>
+    In the second video, two threads are run using <code>./ph 2</code>. As can be seen, using the code implemented in the threading files,
+    the code is sped up by approximately a factor of two, and remains safe such that no keys are missing (in other words, there were no
+    overwrites between the threads such that data was lost). 
+</p>
+
+<iframe src="https://drive.google.com/file/d/1xr6RPSaAhcKi2Ul1xgzg28j5RdWPn3xS/preview" width="700" height="450" allow="autoplay"></iframe>
+<p>
+    Running 1 thread. 
+</p>
+
+<iframe src="https://drive.google.com/file/d/1nb5I-7SgQZkemYuwkgDdBDD7OFVnyS0_/preview" width="700" height="450" allow="autoplay"></iframe>
+<p>
+    Running 2 threads. 
 </p>
